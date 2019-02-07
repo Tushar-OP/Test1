@@ -13,14 +13,16 @@ class Queue():
 		return self.queue.__iter__()
 	
 	def push(self, val):
-		if len(self.queue) >= self.end-1:
+		if len(self.queue) >= self.end:
 			print("Error")
+			return 
 		self.queue.append(val)
 			
 	def pop(self):
 		if len(self.queue) != self.start:
-			return self.queue[0]
-			self.start+=1
+			popped_element = self.queue[0]
+			self.queue.pop(0)
+			return popped_element
 		else:
 			return "Empty"
 		
