@@ -5,13 +5,16 @@ class Stack():
 		self.stack=[]
 		self.limit=limit
 		
+	def __str__(self):
+		return str(self.stack)
+		
 	def __bool__(self):
 		return not bool(self.stack)
 	
 	def push(self, val):
 		if len(self.stack) >= self.limit:
 			return "Full"
-		stack.append(val)
+		self.stack.append(val)
 	
 	def pop(self, val):
 		if len(self.stack) == self.limit:
