@@ -13,20 +13,23 @@ class Queue():
 		return self.queue.__iter__()
 	
 	def push(self, val):
-		if len(self.queue) >= self.end-1:
+		if len(self.queue) >= self.end:
 			print("Error")
+			return
 		self.queue.append(val)
 			
 	def pop(self):
 		if len(self.queue) != self.start:
-			return self.queue[0]
+			popped_element=self.queue[0]
+			self.queue.pop(0)
 			self.start+=1
+			return popped element
 		else:
 			return "Empty"
 		
 if __name__ == "__main__":
 	queue=Queue()
-	for i in range(0, 10):
+	for i in range(0, 9):
 		a=int(input("Enter a number: "))
 		queue.push(a)
 		
